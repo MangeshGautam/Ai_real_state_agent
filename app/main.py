@@ -12,6 +12,5 @@ def read_root():
 def get_user(user_id: int):
     return {"user_id": user_id}
 
-
 app.include_router(router, prefix="/api")
 
