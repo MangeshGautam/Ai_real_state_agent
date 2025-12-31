@@ -1,9 +1,13 @@
 from fastapi import APIRouter
 from app.Models.request import PropertySearchRequest
 from app.Services.real_estate import run_sequential_analysis
-from app.core.config import GOOGLE_API_KEY, FIRECRAWL_API_KEY
+# # from app.core.config import GOOGLE_API_KEY, FIRECRAWL_API_KEY  //use for local Development
+import os
 
 router = APIRouter()
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY")
 
 @router.post("/properties/search")
 def search_properties(payload: PropertySearchRequest):

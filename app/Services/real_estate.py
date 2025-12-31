@@ -8,7 +8,11 @@ from dotenv import load_dotenv
 from firecrawl import FirecrawlApp
 from pydantic import BaseModel, Field
 from typing import List, Optional
-from app.core.config import GOOGLE_API_KEY, FIRECRAWL_API_KEY
+# from app.core.config import GOOGLE_API_KEY, FIRECRAWL_API_KEY // use for Local only 
+import os
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY")
 
 
 
