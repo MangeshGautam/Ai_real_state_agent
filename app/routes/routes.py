@@ -10,6 +10,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY")
 
 @router.post("/properties/search")
+@router.post("/properties/search/")
 def search_properties(payload: PropertySearchRequest):
 
     user_criteria = {
